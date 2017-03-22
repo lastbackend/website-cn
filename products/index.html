@@ -3,9 +3,9 @@
 
 <head>
 
-    <link rel="stylesheet" href="https://lastbackend.com/css/font-awesome.min.css">
-<link rel="stylesheet" href="https://lastbackend.com/css/bootstrap.min.css">
-<link rel="stylesheet" href="https://lastbackend.com/css/style.css">
+    <link rel="stylesheet" href="https://lastbackend.com/%20/css/font-awesome.min.css%20">
+<link rel="stylesheet" href="https://lastbackend.com/%20/css/bootstrap.min.css%20">
+<link rel="stylesheet" href="https://lastbackend.com/%20/css/style.css%20">
 
 <title>Last.Backend</title>
 
@@ -15,44 +15,43 @@
 <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro" rel="stylesheet">
 <link href="https://fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet">
 
+    <script src="https://lastbackend.com/%20/js/jquery-3.1.1.min.js%20"></script>
 
-    <script src="https://lastbackend.com/js/jquery-3.1.1.min.js"></script>
-
-<script src = "https://lastbackend.com/js/bootstrap.min.js" ></script>
+<script src="https://lastbackend.com/%20/js/bootstrap.min.js%20"></script>
 
 
 <script>
-    var keys       = {
-        'www.lastbackend.com' : 'UA-50023825-4',
-        'lastbackend.com'     : 'UA-50023825-4',
-        'cn.lastbackend.com'  : 'UA-50023825-4',
-        dev                   : 'UA-50023825-5',
-        '192.168.1.37'        : 'UA-50023825-5'
+    var keys = {
+        'www.lastbackend.com': 'UA-50023825-4',
+        'lastbackend.com': 'UA-50023825-4',
+        'cn.lastbackend.com': 'UA-50023825-4',
+        dev: 'UA-50023825-5',
+        '192.168.1.37': 'UA-50023825-5'
     };
-    var domains    = {
-        'lastbackend.com'   : ['www.lastbackend.com','lastbackend.com', 'app.lastbackend.com', 'cn.lastbackend.com'],
-        'cn.lastbackend.com': ['www.lastbackend.cn','lastbackend.com', 'app.lastbackend.com', 'cn.lastbackend.com'],
-        dev                 : [
+    var domains = {
+        'lastbackend.com': ['www.lastbackend.com', 'lastbackend.com', 'app.lastbackend.com', 'cn.lastbackend.com'],
+        'cn.lastbackend.com': ['www.lastbackend.cn', 'lastbackend.com', 'app.lastbackend.com', 'cn.lastbackend.com'],
+        dev: [
             'lstbknd.net', 'app.lstbknd.net', 'dev.lstbknd.net', 'app.dev.lstbknd.net',
             'localhost:4000', 'app.lb'
         ]
     };
-    var GA_KEY     = keys[document.domain] || keys.dev;
+    var GA_KEY = keys[document.domain] || keys.dev;
     var GA_DOMAINS = domains[document.domain] || domains.dev;
     var GA_local =
-    (function (i, s, o, g, r, a, m) {
-        i['GoogleAnalyticsObject'] = r;
-        i[r] = i[r] || function () {
+        (function (i, s, o, g, r, a, m) {
+            i['GoogleAnalyticsObject'] = r;
+            i[r] = i[r] || function () {
                 (i[r].q = i[r].q || []).push(arguments)
             }, i[r].l = 1 * new Date();
-        a = s.createElement(o),
-            m = s.getElementsByTagName(o)[0];
-        a.async = 1;
-        a.src   = g;
-        m.parentNode.insertBefore(a, m)
-    })(window, document, 'script', '//www.google-analytics.com/analytics.js', 'ga');
+            a = s.createElement(o),
+                m = s.getElementsByTagName(o)[0];
+            a.async = 1;
+            a.src = g;
+            m.parentNode.insertBefore(a, m)
+        })(window, document, 'script', '//www.google-analytics.com/analytics.js', 'ga');
 
-    ga('create', GA_KEY, 'auto', {'allowLinker': true});
+    ga('create', GA_KEY, 'auto', { 'allowLinker': true });
     ga('require', 'linker');
     ga('linker:autoLink', GA_DOMAINS);
     ga('send', 'pageview');
@@ -74,9 +73,10 @@
         expires.setFullYear(expires.getFullYear() + 10);
         setCookie('visited', clientId, {
             expires: expires,
-            path   : '/'
+            path: '/'
         });
     }
+
 </script>
 
 <script type="text/javascript">
@@ -109,9 +109,10 @@
             f();
         }
     })(document, window, "yandex_metrika_callbacks");
+
 </script>
 <noscript>
-    <div><img src="https://mc.yandex.ru/watch/28716836" style="position:absolute; left:-9999px;" alt=""/></div>
+    <div><img src="https://mc.yandex.ru/watch/28716836" style="position:absolute; left:-9999px;" alt="" /></div>
 </noscript>
 
 </head>
@@ -147,9 +148,8 @@
                             </p>
 
                             <div class="media-body">
-                                <h2 class="media-heading blue_text">Cloud</h2>
-                                A complete cloud platform for<br>
-                                running modern apps.
+                                <h2 class="media-heading blue_text">云</h2>
+                              一个完整的云平台，用于运行应用程序。
                             </div>
                         </div>
 
@@ -165,9 +165,8 @@
                             </p>
 
                             <div class="media-body">
-                                <h2 class="media-heading orange_text">Dedicated</h2>
-                                Develop, host, and scale your apps<br>
-                                in the your own cloud cluster.
+                                <h2 class="media-heading orange_text">专用</h2>
+                               在您自己的云集群中开发，托管和扩展您的应用程序。
                             </div>
                         </div>
 
@@ -183,9 +182,8 @@
                             </p>
 
                             <div class="media-body">
-                                <h2 class="media-heading black_text">Enterprise</h2>
-                                Last.Backend offers the enterprise<br>
-                                features large companies need.
+                                <h2 class="media-heading black_text">企业级</h2>
+                             Last.Backend 提供大公司所需要的企业企业级功能特性。
                             </div>
                         </div>
 
@@ -213,7 +211,7 @@
                             </p>
 
                             <div class="media-body">
-                                ABOUT LAST.BACKEND
+                              关于 LAST.BACKEND
                             </div>
                         </div>
 
@@ -227,7 +225,7 @@
                             </p>
 
                             <div class="media-body">
-                                BLOG
+                                博客
                             </div>
                         </div>
 
@@ -269,7 +267,7 @@
 
                 <div class="text_after_success_email_send">
                     <p>
-                        Thank you! We’ll notify you when your account will be ready to use.
+                        谢谢！ 当您的帐户可以使用时，我们会通知您。
                     </p>
                 </div>
 
@@ -636,12 +634,12 @@
                     </p>
 
                     <p>
-                       订阅我们的电子报
+                        订阅我们的电子报
                     </p>
 
                     <div class="form-inline">
-                        <input type="text" class="input_text" placeholder="输入您的E-MAIL"><input onclick="sendEmail()"
-                            type="submit" class="input_submit" value="提交">
+                        <input type="text" class="input_text" placeholder="输入您的E-MAIL"><input onclick="sendEmail()" type="submit"
+                            class="input_submit" value="提交">
                     </div>
                 </div>
             </div>
