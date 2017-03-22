@@ -2,18 +2,18 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Last.Backend</title>
-    <link>https://lastbackend.com/index.xml</link>
+    <link>https://lastbackend.cn/index.xml</link>
     <description>Recent content on Last.Backend</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <atom:link href="https://lastbackend.com/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="https://lastbackend.cn/index.xml" rel="self" type="application/rss+xml" />
     
     <item>
       <title></title>
-      <link>https://lastbackend.com/about/</link>
+      <link>https://lastbackend.cn/about/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://lastbackend.com/about/</guid>
+      <guid>https://lastbackend.cn/about/</guid>
       <description>&lt;!DOCTYPE html&gt;
 &lt;html&gt;
 
@@ -46,10 +46,10 @@
     
     <item>
       <title></title>
-      <link>https://lastbackend.com/cloud/</link>
+      <link>https://lastbackend.cn/cloud/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://lastbackend.com/cloud/</guid>
+      <guid>https://lastbackend.cn/cloud/</guid>
       <description>&lt;!DOCTYPE html&gt;
 &lt;html&gt;
 
@@ -204,10 +204,10 @@
     
     <item>
       <title></title>
-      <link>https://lastbackend.com/dedicated/</link>
+      <link>https://lastbackend.cn/dedicated/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://lastbackend.com/dedicated/</guid>
+      <guid>https://lastbackend.cn/dedicated/</guid>
       <description>&lt;!DOCTYPE html&gt;
 &lt;html&gt;
 
@@ -354,10 +354,10 @@
     
     <item>
       <title></title>
-      <link>https://lastbackend.com/enterprise/</link>
+      <link>https://lastbackend.cn/enterprise/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://lastbackend.com/enterprise/</guid>
+      <guid>https://lastbackend.cn/enterprise/</guid>
       <description>&lt;!DOCTYPE html&gt;
 &lt;html&gt;
 
@@ -501,10 +501,10 @@
     
     <item>
       <title></title>
-      <link>https://lastbackend.com/products/</link>
+      <link>https://lastbackend.cn/products/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://lastbackend.com/products/</guid>
+      <guid>https://lastbackend.cn/products/</guid>
       <description>&lt;!DOCTYPE html&gt;
 &lt;html&gt;
 
