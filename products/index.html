@@ -1,0 +1,771 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+
+    <link rel="stylesheet" href="https://lastbackend.com/css/font-awesome.min.css">
+<link rel="stylesheet" href="https://lastbackend.com/css/bootstrap.min.css">
+<link rel="stylesheet" href="https://lastbackend.com/css/style.css">
+
+<title>Last.Backend</title>
+
+<link rel="shortcut icon" href="/img/favicon.ico" type="image/x-icon">
+
+<link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet">
+
+
+    <script src="https://lastbackend.com/js/jquery-3.1.1.min.js"></script>
+
+<script src = "https://lastbackend.com/js/bootstrap.min.js" ></script>
+
+
+<script>
+    var keys       = {
+        'www.lastbackend.com' : 'UA-50023825-4',
+        'lastbackend.com'     : 'UA-50023825-4',
+        'cn.lastbackend.com'  : 'UA-50023825-4',
+        dev                   : 'UA-50023825-5',
+        '192.168.1.37'        : 'UA-50023825-5'
+    };
+    var domains    = {
+        'lastbackend.com'   : ['www.lastbackend.com','lastbackend.com', 'app.lastbackend.com', 'cn.lastbackend.com'],
+        'cn.lastbackend.com': ['www.lastbackend.cn','lastbackend.com', 'app.lastbackend.com', 'cn.lastbackend.com'],
+        dev                 : [
+            'lstbknd.net', 'app.lstbknd.net', 'dev.lstbknd.net', 'app.dev.lstbknd.net',
+            'localhost:4000', 'app.lb'
+        ]
+    };
+    var GA_KEY     = keys[document.domain] || keys.dev;
+    var GA_DOMAINS = domains[document.domain] || domains.dev;
+    var GA_local =
+    (function (i, s, o, g, r, a, m) {
+        i['GoogleAnalyticsObject'] = r;
+        i[r] = i[r] || function () {
+                (i[r].q = i[r].q || []).push(arguments)
+            }, i[r].l = 1 * new Date();
+        a = s.createElement(o),
+            m = s.getElementsByTagName(o)[0];
+        a.async = 1;
+        a.src   = g;
+        m.parentNode.insertBefore(a, m)
+    })(window, document, 'script', '//www.google-analytics.com/analytics.js', 'ga');
+
+    ga('create', GA_KEY, 'auto', {'allowLinker': true});
+    ga('require', 'linker');
+    ga('linker:autoLink', GA_DOMAINS);
+    ga('send', 'pageview');
+    ga(tracking);
+
+    function tracking(tracker) {
+        var clientId = tracker.get('clientId');
+        ga('set', 'dimension1', clientId);
+
+        
+        var visited = getCookie('visited');
+        if (!visited) {
+            ga('send', 'event', 'user', 'init', '');
+        } else if (visited != clientId) {
+            ga('send', 'event', 'user', 'return', '');
+        }
+
+        var expires = new Date;
+        expires.setFullYear(expires.getFullYear() + 10);
+        setCookie('visited', clientId, {
+            expires: expires,
+            path   : '/'
+        });
+    }
+</script>
+
+<script type="text/javascript">
+    (function (d, w, c) {
+        (w[c] = w[c] || []).push(function () {
+            try {
+                w.yaCounter28716836 = new Ya.Metrika({
+                    id: 28716836,
+                    clickmap: true,
+                    trackLinks: true,
+                    accurateTrackBounce: true,
+                    webvisor: true
+                });
+            } catch (e) {
+            }
+        });
+
+        var n = d.getElementsByTagName("script")[0],
+            s = d.createElement("script"),
+            f = function () {
+                n.parentNode.insertBefore(s, n);
+            };
+        s.type = "text/javascript";
+        s.async = true;
+        s.src = "https://mc.yandex.ru/metrika/watch.js";
+
+        if (w.opera == "[object Opera]") {
+            d.addEventListener("DOMContentLoaded", f, false);
+        } else {
+            f();
+        }
+    })(document, window, "yandex_metrika_callbacks");
+</script>
+<noscript>
+    <div><img src="https://mc.yandex.ru/watch/28716836" style="position:absolute; left:-9999px;" alt=""/></div>
+</noscript>
+
+</head>
+
+<body>
+
+    <nav class="navbar navbar-light bg-faded navbar-fixed-top">
+
+    <button class="navbar-toggler hidden-lg-up" type="button"
+            data-toggle="collapse" data-target="#navbarResponsive"
+            aria-controls="navbarResponsive" aria-expanded="false"
+            aria-label="Toggle navigation"></button>
+
+    <div class="collapse navbar-toggleable-md" id="navbarResponsive">
+
+        <a class="navbar-brand hidden-lg-down" href="https://lastbackend.com">
+            <img data-lazy-src="" src="../img/l_logo.png">
+        </a>
+
+        <ul class="nav navbar-nav">
+
+            <li class="nav-item active dropdown nav_drop_products ">
+
+                <a class="nav-link" href="#"
+                   aria-haspopup="true" aria-expanded="false">产品</a>
+
+                <div class="dropdown-menu" aria-labelledby="supportedContentDropdown">
+                    <a class="dropdown-item" href="https://lastbackend.com/cloud">
+
+                        <div class="media">
+                            <p class="media-left align-middle">
+                                <img data-lazy-src="" src="../img/l_menu_cloud.png">
+                            </p>
+
+                            <div class="media-body">
+                                <h2 class="media-heading blue_text">Cloud</h2>
+                                A complete cloud platform for<br>
+                                running modern apps.
+                            </div>
+                        </div>
+
+                    </a>
+
+                    <hr>
+
+                    <a class="dropdown-item" href="https://lastbackend.com/dedicated">
+
+                        <div class="media">
+                            <p class="media-left align-middle">
+                                <img data-lazy-src="" src="../img/l_menu_dedicated.png">
+                            </p>
+
+                            <div class="media-body">
+                                <h2 class="media-heading orange_text">Dedicated</h2>
+                                Develop, host, and scale your apps<br>
+                                in the your own cloud cluster.
+                            </div>
+                        </div>
+
+                    </a>
+
+                    <hr>
+
+                    <a class="dropdown-item" href="https://lastbackend.com/enterprise">
+
+                        <div class="media">
+                            <p class="media-left align-middle">
+                                <img data-lazy-src="" src="../img/l_menu_enterprise.png">
+                            </p>
+
+                            <div class="media-body">
+                                <h2 class="media-heading black_text">Enterprise</h2>
+                                Last.Backend offers the enterprise<br>
+                                features large companies need.
+                            </div>
+                        </div>
+
+                    </a>
+                </div>
+            </li>
+
+            <li class="nav-item">
+                <a target="_blank" class="nav-link" href="https://github.com/lastbackend/lastbackend/wiki">
+                    文档
+                </a>
+            </li>
+
+            <li class="nav-item dropdown">
+
+                <a class="nav-link" href="#"
+                   aria-haspopup="true" aria-expanded="false">公司</a>
+
+                <div class="dropdown-menu" aria-labelledby="supportedContentDropdown">
+                    <a class="dropdown-item" href="https://lastbackend.com/about">
+
+                        <div class="media">
+                            <p class="media-left">
+                                <img data-lazy-src="" src="../img/l_menu_pricing.png">
+                            </p>
+
+                            <div class="media-body">
+                                ABOUT LAST.BACKEND
+                            </div>
+                        </div>
+
+                    </a>
+
+                    <a target="_blank" class="dropdown-item" href="http://blog.lastbackend.com">
+
+                        <div class="media">
+                            <p class="media-left">
+                                <img data-lazy-src="" src="../img/l_menu_pricing.png">
+                            </p>
+
+                            <div class="media-body">
+                                BLOG
+                            </div>
+                        </div>
+
+                    </a>
+                </div>
+            </li>
+
+
+            <li class="nav-item float-lg-right">
+                <a target="_blank" class="nav-link" href="https://github.com/lastbackend/lastbackend">
+                    <i class="fa fa-github" aria-hidden="true"></i>
+                </a>
+            </li>
+
+            <li class="nav-item float-lg-right active">
+                <a target="_blank" class="nav-link" href="https://github.com/lastbackend/lastbackend">
+                    GitHub上查阅
+                </a>
+            </li>
+
+        </ul>
+
+    </div>
+</nav>
+
+
+    <div class="container-fluid preview preview_dedicated">
+    <div class="row">
+
+        <div class="col-md-12 offset-md-0 col-lg-6 offset-lg-3">
+            <p class="source">
+                一个为了创建，扩展<br> 和管理应用程序的平台
+            </p>
+        </div>
+
+        <div class="row">
+
+            <div class="col-md-12 col-lg-8 offset-lg-2">
+
+                <div class="text_after_success_email_send">
+                    <p>
+                        Thank you! We’ll notify you when your account will be ready to use.
+                    </p>
+                </div>
+
+                <div class="form-inline okay">
+                    <div class="form-group">
+                        <div class="input-group">
+
+                            <input type="text" class="form-control email-form-in-preview" placeholder="输入您的 E-mail">
+
+                        </div>
+                    </div>
+
+                    <button type="submit" onclick="sendEmail()" class="btn btn-secondary button_yellow">
+                        <span>获得访问</span>
+                    </button>
+
+                </div>
+
+            </div>
+        </div>
+
+
+    </div>
+</div>
+
+    <div class="container-fluid products_kinds">
+    <div class="row">
+        <div class="col-md-8 offset-md-2 col-lg-4 offset-lg-1 pr_kind">
+
+            <div class="media">
+                <p class="media-left">
+                    <img data-lazy-src="" src="../img/l_menu_cloud.png">
+                </p>
+
+                <div class="media-body">
+                    <h2 class="media-heading blue_text">LAST.BACKEND 云</h2>
+                </div>
+            </div>
+
+            <p class="third_text">
+                Last.Backend是一个基于容器管理系统的云平台，具有强大的生态系统，用于部署应用。 Last.Backend 云遍布全球9个地区，横跨北美和西欧。
+            </p>
+
+            <a href="https://lastbackend.com/%20cloud%20">
+                <button class="btn btn-secondary blue_background">现在就试试！</button>
+            </a>
+
+        </div>
+
+        <div class="col-md-8 offset-md-2 col-lg-4 offset-lg-2 pr_kind">
+
+            <div class="media">
+                <p class="media-left">
+                    <img data-lazy-src="" src="../img/l_menu_dedicated.png">
+                </p>
+
+                <div class="media-body orange_text">
+                    <h2 class="media-heading">LAST.BACKEND 专用云</h2>
+                </div>
+            </div>
+
+            <p class="third_text">
+                使用Last.Backend专用云，您可以使用Last.Backend平台的全部专用服务器，包括按小时计费和快速配置！
+            </p>
+
+            <a href="https://lastbackend.com/%20dedicated%20">
+                <button class="btn btn-secondary orange_background">阅读更多</button>
+            </a>
+
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-md-8 offset-md-2 col-lg-4 offset-lg-1 pr_kind">
+
+            <div class="media">
+                <p class="media-left">
+                    <img data-lazy-src="" src="../img/l_os.png">
+                </p>
+
+                <div class="media-body">
+                    <h2 class="media-heading green_text">LB PAAS & 命令行工具</h2>
+                </div>
+            </div>
+
+            <p class="third_text">
+                Last.Backend命令行工具为开发人员提供了可部署和运行应用程序的Last.Backend云只需几个命令。
+            </p>
+
+            <a href="https://github.com/lastbackend/lastbackend">
+                <button class="btn btn-secondary green_background">下载 CLI 在</button>
+            </a>
+
+            <span>GITHUB上查看 <i class="fa fa-github" aria-hidden="true"></i> </span>
+
+        </div>
+
+        <div class="col-md-8 offset-md-2 col-lg-4 offset-lg-2 pr_kind">
+
+            <div class="media">
+                <p class="media-left">
+                    <img data-lazy-src="" src="../img/l_menu_enterprise.png">
+                </p>
+
+                <div class="media-body black_text">
+                    <h2 class="media-heading">LAST.BACKEND 企业级</h2>
+                </div>
+            </div>
+
+            <p class="third_text">
+                Last.Backend 使我们能够在一天内无缝地、可靠地多次部署。 可在以前的基础设施中进行操作、维护。
+            </p>
+
+            <a href="https://lastbackend.com/%20enterprise%20">
+                <button class="btn btn-secondary black_background">阅读更多</button>
+            </a>
+
+        </div>
+
+    </div>
+</div>
+
+
+
+
+    <div class="container-fluid use-cases">
+    <div class="row">
+        <div class="col-lg-6 offset-lg-3">
+            <p class="use-case_main_text source">
+                应用案例
+            </p>
+        </div>
+    </div>
+
+    <div class="row">
+
+        <div class="col-lg-4 offset-lg-2">
+            <div class="media">
+                <p class="media-left source">
+                    #01
+                </p>
+
+                <div class="media-body orange_text">
+                    <h2 class="media-heading">开发 / 测试</h2>
+                    <p class="third_text">
+                        Last.Backend使您专注于代码编写。 使用我们的Docker本地工作流程，无需VM管理器或前期规划来执行，在Last.Backend上的开发和您在自己电脑上开发是完全一样的。 知道Docker，就知道Last.Backend。
+                    </p>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-lg-4 offset-lg-0">
+            <div class="media">
+                <p class="media-left source">
+                    #02
+                </p>
+
+                <div class="media-body orange_text">
+                    <h2 class="media-heading">基础设施优化</h2>
+                    <p class="third_text">
+                        Last.Backend是基于容器管理系统的云平台。 容器只包含构建和运行应用程序所需的内容。 使企业减少存储量并降低组织中的管理成本。
+                    </p>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+    <div class="row">
+
+        <div class="col-lg-4 offset-lg-2">
+            <div class="media">
+                <p class="media-left source">
+                    #03
+                </p>
+
+                <div class="media-body orange_text">
+                    <h2 class="media-heading">Cl / CD</h2>
+                    <p class="third_text">
+                        Last.Backend是创建您的Cl / CD 管道的最佳云托管服务。 无需长时间运行昂贵的VM、等待构建工作。 有了Last.Backend，你只需要对使用的云资源支付即可。
+                    </p>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-lg-4 offset-lg-0">
+            <div class="media">
+                <p class="media-left source">
+                    #04
+                </p>
+
+                <div class="media-body orange_text">
+                    <h2 class="media-heading">支持多语言</h2>
+                    <p class="third_text">
+                        开发人员有选择，并能够在同一平台上运行多种语言和数据库。 更容易利用容器生态系统的优势。
+                    </p>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+    <div class="row">
+
+        <div class="col-lg-4 offset-lg-2">
+            <div class="media">
+                <p class="media-left source">
+                    #05
+                </p>
+
+                <div class="media-body orange_text">
+                    <h2 class="media-heading">演示 / 展示</h2>
+                    <p class="third_text">
+                        需要展示您的新项目或应用程序？ 部署到Last.Backend是令人难以置信的快和便捷，只需几个命令，您的应用程序就将启动和运行。
+                    </p>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-lg-4 offset-lg-0">
+            <div class="media">
+                <p class="media-left source">
+                    #06
+                </p>
+
+                <div class="media-body orange_text">
+                    <h2 class="media-heading">应用管理t</h2>
+                    <p class="third_text">
+                        开发人员可以使用丰富的命令行工具（一个强大的Web界面）来创建和管理应用程序。
+                    </p>
+                </div>
+            </div>
+        </div>
+
+    </div>
+</div>
+
+    <div class="container-fluid enterprise_resources">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-6 offset-lg-3">
+                <p class="source resources_main_text">
+                    资源
+                </p>
+            </div>
+        </div>
+
+        <div class="row">
+
+            <div class="col-lg-6">
+                <a href="https://lastbackend.com/%20../documents/datasheet_dedicated_cloud.pdf%20">
+                    <img data-lazy-src="" src="../img/l_d_pdf.png">
+
+                    <p>
+                        Last.Backend 专用云
+                    </p>
+                </a>
+            </div>
+
+            <div class="col-lg-6">
+                <a href="https://lastbackend.com/%20../documents/datasheet_enterprise.pdf%20">
+                    <img data-lazy-src="" src="../img/l_d_pdf.png">
+
+                    <p>
+                        Last.Backend 企业级
+                    </p>
+                </a>
+            </div>
+        </div>
+    </div>
+</div>
+
+    <div class="container-fluid bottom_nav">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-3 col-lg-2">
+                <p>
+                    产品
+                </p>
+
+                <p>
+                    <a href="https://lastbackend.com/%20products%20">概述</a>
+                </p>
+
+                <p>
+                    <a href="https://lastbackend.com/%20cloud%20">云</a>
+                </p>
+
+                <p>
+                    <a href="https://lastbackend.com/%20dedicated%20">专用</a>
+                </p>
+
+                <p>
+                    <a href="https://lastbackend.com/%20enterprise%20">企业</a>
+                </p>
+            </div>
+
+            <div class="col-md-3 col-lg-2">
+                <p>
+                    资源
+                </p>
+
+                <p>
+                    <a target="_blank" href="https://blog.lastbackend.com/">博客</a>
+                </p>
+
+                <p>
+                    <a target="_blank" href="https://github.com/lastbackend/lastbackend/wiki/Getting-Started">准备开始</a>
+                </p>
+
+                <p>
+                    <a target="_blank" href="https://github.com/lastbackend/lastbackend/wiki">文档</a>
+                </p>
+
+                <p>
+                    <a target="_blank" href="https://github.com/lastbackend/lastbackend/wiki/API-Reference">API</a>
+                </p>
+            </div>
+
+            <div class="col-md-3 col-lg-2">
+                <p>
+                    公司
+                </p>
+
+                <p>
+                    <a href="https://lastbackend.com/%20about%20">关于</a>
+                </p>
+
+                
+                
+                
+
+                
+                
+                
+            </div>
+
+            <div class="col-md-3 col-lg-2">
+                
+                
+                
+
+                
+                
+                
+
+                
+                
+                
+            </div>
+
+            <div class="col-md-8 offset-md-4 col-lg-4 offset-lg-0">
+                <div class="container">
+                    <p>
+                        订阅
+                    </p>
+
+                    <p>
+                        <a target="_blank" href="https://twitter.com/LastBackend"><i class="fa fa-twitter" aria-hidden="true"></i></a>
+                        <a target="_blank" href="https://www.facebook.com/lastbackend"><i class="fa fa-facebook" aria-hidden="true"></i></a>
+                        <a target="_blank" href="https://www.reddit.com/r/Lastbackend/"><i class="fa fa-reddit" aria-hidden="true"></i></a>
+                        <a target="_blank" href="https://www.linkedin.com/company/last-backend"> <i class="fa fa-linkedin" aria-hidden="true"></i></a>
+                        <a target="_blank" href="https://angel.co/last-backend"> <i class="fa fa-angellist" aria-hidden="true"></i></a>
+                    </p>
+
+                    <p>
+                       订阅我们的电子报
+                    </p>
+
+                    <div class="form-inline">
+                        <input type="text" class="input_text" placeholder="输入您的E-MAIL"><input onclick="sendEmail()"
+                            type="submit" class="input_submit" value="提交">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+    <footer>
+    <a href="#">
+        <img data-lazy-src="" src="../img/l_footer.png">
+    </a>
+</footer>
+
+    <script>
+        (function () {
+            var w = window;
+            var ic = w.Intercom;
+            if (typeof ic === "function") {
+                ic('reattach_activator');
+                ic('update', intercomSettings);
+            } else {
+                var d = document;
+                var i = function () {
+                    i.c(arguments)
+                };
+                i.q = [];
+                i.c = function (args) {
+                    i.q.push(args)
+                };
+                w.Intercom = i;
+                function l() {
+                    var s = d.createElement('script');
+                    s.type = 'text/javascript';
+                    s.async = true;
+                    s.src = 'https://widget.intercom.io/widget/hufjeo4r';
+                    var x = d.getElementsByTagName('script')[0];
+                    x.parentNode.insertBefore(s, x);
+                }
+
+                if (w.attachEvent) {
+                    w.attachEvent('onload', l);
+                } else {
+                    w.addEventListener('load', l, false);
+                }
+            }
+        })()
+    </script>
+
+    <script>
+        function validateEmail(email) {
+            var re = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+            return re.test(email);
+        }
+    </script>
+
+
+    <script>
+        function sendEmail() {
+
+            var em = document.querySelector('.email-form-in-preview');
+            var okay = document.querySelector('.okay');
+            var text_after = document.querySelector('.text_after_success_email_send');
+            var okay2 = document.querySelector('.okay2');
+            var tases2 = document.querySelector('.tases2');
+            var name = document.querySelector('.inter_name');
+            var company = document.querySelector('.inter_com');
+            var com_email = document.querySelector('.inter_mail');
+            var lame = document.querySelector('.inter_last_name');
+            var fd_af = document.querySelector('.feedback_after');
+            var fd = document.querySelector('.feedback_form');
+
+            if (em == null){
+                if (validateEmail(com_email.value)) {
+                    window.Intercom('boot', {
+                        name: name.value + ' ' + lame.value,
+                        app_id: 'hufjeo4r',
+                        email: com_email.value,
+                        company: {
+                            id: company.value.toLowerCase(),
+                            name: company.value
+                        },
+                        created_at: new Date().now
+                    });
+
+                    ga('send', 'event', 'company', 'email');
+
+                    fd.style.display = 'none';
+                    fd_af.style.display = 'block';
+
+                    return true;
+                } else {
+                    com_email.style.color = '#F01300';
+                }
+            } else {
+                if (em.value == '') {
+                    em = document.querySelector('.email-form-2')
+                }
+
+                if (validateEmail(em.value)) {
+                    window.Intercom('boot', {
+                        app_id: 'hufjeo4r',
+                        email: em.value,
+                        created_at: new Date().now
+                    });
+
+                    ga('send', 'event', 'user', 'email');
+
+                    em.value = '';
+
+                    okay.style.display = 'none';
+                    text_after.style.display = 'block';
+
+                    okay2.style.display = 'none';
+                    tases2.style.display = 'block';
+
+
+                    return true;
+                } else {
+                    em.style.color = '#F01300';
+                }
+            }
+        }
+    </script>
+
+</body>
+
+</html>
