@@ -99,15 +99,15 @@
         }
 
         function round(val) {
-            if (val == 128) return 1.25;
-            if (val == 256) return 2.5;
-            if (val == 512) return 5;
-            if (val == 1024) return 10;
-            if (val == 2048) return 20;
-            if (val == 4096) return 40;
-            if (val == 8192) return 80;
-            if (val == 16384) return 120;
-            if (val == 32768) return 240;
+            if (val == 128) return 9;
+            if (val == 256) return 17;
+            if (val == 512) return 34;
+            if (val == 1024) return 68;
+            if (val == 2048) return 136;
+            if (val == 4096) return 272;
+            if (val == 8192) return 544;
+            if (val == 16384) return 816;
+            if (val == 32768) return 1632;
         }
     }
 
