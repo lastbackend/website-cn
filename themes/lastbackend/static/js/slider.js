@@ -99,7 +99,7 @@
         }
 
         function round(val) {
-            if (val == 128) return 8.5;
+            if (val == 128) return 9;
             if (val == 256) return 17;
             if (val == 512) return 34;
             if (val == 1024) return 68;
